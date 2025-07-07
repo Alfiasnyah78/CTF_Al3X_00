@@ -13,7 +13,7 @@ users = {
     "user": "jwttokenbro"
 }
 
-FLAG = "alx{JwT_T0k3Nn_Broken_Access_Control}"
+FLAG = "alx{flag}"
 
 def generate_token(username, role):
     payload = {
