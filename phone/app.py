@@ -128,7 +128,7 @@ def flag():
     # Cek agar hanya XSS dari sisi client yang bisa akses
     if not session.get("logged_in"):
         return "", 403
-    return "alx{XSS_51masntap_K3ren34923}"
+    return "alx{flag}"
 
 @app.route("/logout")
 def logout():
