@@ -2,7 +2,7 @@ from flask import Flask, request, render_template, make_response
 
 app = Flask(__name__)
 
-FLAG = "alx{c00ki3_Fr3y44_JKT48_0shi}"
+FLAG = "alx{flag}"
 DOB_CORRECT = "fff6927056a634ef2ee1e36e4498f814379887bee0b8a271de0e98635d4d35f415991aa12a46486f2ad4663b93043de2d46ebfdde2388cd45308aa493d27bcd3"
 
 @app.route("/")
