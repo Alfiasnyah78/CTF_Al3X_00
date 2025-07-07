@@ -3,7 +3,7 @@ from flask import Flask, request, render_template, render_template_string, sessi
 app = Flask(__name__)
 app.secret_key = "super_secret_key_for_ssti_lab"
 
-FLAG = "alx{tipu-tipu}"
+FLAG = "alx{flag}"
 
 @app.route("/", methods=["GET", "POST"])
 def index():
