@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order #{{ id }}</title>
+    <style>
+        body {
+            font-family: monospace;
+            background-color: #0b0b0b;
+            color: #00ffcc;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-color: #00ffcc;
+            color: #000;
+            padding: 20px;
+            font-size: 26px;
+            font-weight: bold;
+        }
+
+        .order-box {
+            margin: 50px auto;
+            width: 400px;
+            border: 2px dashed #00ffcc;
+            border-radius: 15px;
+            padding: 30px;
+            background-color: #000;
+        }
+
+        .order-box p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        img {
+            width: 200px;
+            margin: 15px auto;
+            border-radius: 10px;
+            border: 2px solid #00ffcc;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #000;
+            background-color: #00ffcc;
+            padding: 8px 14px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        a:hover {
+            background-color: #00ccaa;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">🧾 Detail Order #{{ id }}</div>
+    <div class="order-box">
+        <p><strong>Nama Pembeli:</strong> {{ order.name }}</p>
+        <p><strong>Item:</strong> {{ order.item }}</p>
+        <img src="/static/img/item{{ id }}.jpg" alt="{{ order.item }}">
+        <p><strong>Harga:</strong> {{ order.price }}</p>
+        <a href="/">⬅ Kembali ke Shop</a>
+    </div>
+
+    <!-- jebakan XSS buat edukasi -->
+    {% if id == 2 %}
+    <script>
+        alert("🚨 Akses ilegal terdeteksi! Anda di keluarkan!");
+        document.body.innerHTML += '<p style="color:red;"><strong>Ini jebakan XSS, kembalilah ke jalan yang benar</strong></p>';
+    </script>
+    {% endif %}
+</body>
+</html>
+

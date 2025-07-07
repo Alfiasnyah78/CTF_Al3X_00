@@ -1,0 +1,33 @@
+body {
+    background: #1e1e1e;
+    color: #00ff00;
+    font-family: monospace;
+    padding: 20px;
+}
+#terminal {
+    max-width: 800px;
+    margin: auto;
+}
+#output {
+    white-space: pre-wrap;
+    margin-bottom: 10px;
+}
+.prompt {
+    color: #0f0;
+    margin-right: 5px;
+}
+#cmdInput {
+    background: transparent;
+    border: none;
+    color: #0f0;
+    outline: none;
+    width: 90%;
+    font-family: monospace;
+    font-size: 1em;
+}
+.prompt {
+    color: #00ff00;
+    margin-right: 5px;
+    font-weight: bold;
+}
+

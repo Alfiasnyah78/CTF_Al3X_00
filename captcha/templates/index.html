@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Web CTF Challenge</title>
+<style>
+body {
+  background-color: #0d1117;
+  color: #c9d1d9;
+  font-family: 'Courier New', Courier, monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  background-color: #161b22;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 400px;
+  box-shadow: 0 0 20px rgba(0,255,0,0.05);
+  border: 1px solid #30363d;
+}
+
+h1 {
+  color: #58a6ff;
+  text-align: center;
+}
+
+input, button {
+  width: 100%;
+  background: #0d1117;
+  color: #c9d1d9;
+  border: 1px solid #30363d;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+button {
+  background-color: #238636;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #2ea043;
+}
+
+.result {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  background-color: #21262d;
+  border-left: 4px solid #58a6ff;
+}
+
+.checkbox {
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.checkbox input {
+  margin-right: 5px;
+}
+    
+</style>
+
+</head>
+<body>
+  <div class="container">
+    <h1>🕵️ Captcha Verify</h1>
+    <form method="POST">
+      <input name="nama" required placeholder="Masukkan nama">
+      <label>Berapa 10 + 5?</label> <!4+3-->
+      <input name="captcha" required placeholder="Jawaban">
+       <div class="checkbox">
+        <input type="checkbox" name="robot" id="robot" required>
+        <label for="robot">Saya bukan robot</label>
+       </div>
+      <button type="submit">Submit</button>
+    </form>
+    {% if result %}
+      <div class="result">{{ result }}</div>
+    {% endif %}
+  </div>
+</body>
+</html>
+

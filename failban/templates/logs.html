@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Log Dashboard</title>
+  <style>
+    body {
+      font-family: 'Courier New', Courier, monospace;
+      background: #1e1e2f;
+      color: #e0e0e0;
+      padding: 30px 40px;
+      line-height: 1.4;
+      min-height: 100vh;
+      box-sizing: border-box;
+    }
+    a {
+      color: #8ab4f8;
+      text-decoration: none;
+      margin-right: 25px;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    a:hover {
+      color: #5c87d3;
+      text-decoration: underline;
+    }
+    h2 {
+      margin-top: 50px;
+      margin-bottom: 15px;
+      font-weight: 700;
+      font-size: 1.8rem;
+      border-bottom: 2px solid #5c87d3;
+      padding-bottom: 5px;
+    }
+    pre {
+      background: #121224;
+      border-radius: 8px;
+      padding: 20px;
+      max-height: 450px;
+      overflow-y: auto;
+      box-shadow: inset 0 0 10px #0d0d1a;
+      white-space: pre-wrap; /* wrap long lines */
+      word-wrap: break-word;
+      font-size: 0.9rem;
+      line-height: 1.3;
+      color: #d4d4dc;
+    }
+    /* Scrollbar styling for modern browsers */
+    pre::-webkit-scrollbar {
+      width: 8px;
+    }
+    pre::-webkit-scrollbar-thumb {
+      background: #5c87d3;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/admin">← Back to Admin</a>
+    <a href="/logout">Logout</a>
+  </nav>
+
+  <h2>Application Log (/var/log/app/app.log)</h2>
+  <pre>{{ app_log }}</pre>
+
+  <h2>Fail2ban Log (/var/log/fail2ban.log)</h2>
+  <pre>{{ fail2ban_log }}</pre>
+</body>
+</html>
+

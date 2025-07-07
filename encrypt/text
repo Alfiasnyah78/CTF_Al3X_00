@@ -1,0 +1,1 @@
+cloudflared access tcp --hostname encrypt.al3xzer.cfd --url localhost:1337

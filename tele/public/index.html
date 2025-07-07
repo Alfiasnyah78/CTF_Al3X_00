@@ -1,0 +1,138 @@
+<!DOCTYPE html>614760239
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Kontribusi Soal CTF</title>
+  <style>
+    body {
+      background-color: #0a0a0a;
+      color: #00ff88;
+      font-family: monospace;
+      display: flex;
+      justify-content: center;
+      align-items: start;
+      padding: 2rem;
+    }
+
+    .terminal {
+      width: 600px;
+      border: 2px solid #00ff88;
+      padding: 2rem;
+      box-shadow: 0 0 20px #00ff88;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      background-color: #111;
+      color: #00ff88;
+      border: 1px solid #00ff88;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      padding: 8px;
+    }
+
+    button {
+      width: 100%;
+      background: #000;
+      color: #00ff88;
+      border: 2px solid #00ff88;
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #00ff88;
+      color: #000;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    .footer {
+      margin-top: 1rem;
+      font-size: 12px;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+  <div class="terminal">
+    <h2>📤 Kontribusi Soal CTF</h2>
+    <form id="challengeForm">
+      <label>Nama Kontributor:</label>
+      <input type="text" id="name" required>
+
+      <labe614760239l>Judul Challenge:</label>
+      <input type="text" id="title" required>
+
+      <label>Deskripsi:</label>
+      <textarea id="description" rows="4" required></textarea>
+
+      <label>Point:</label>
+      <input type="number" id="point" required>
+
+      <label>Level:</label>
+      <select id="level" required>
+        <option value="">-- Pilih --</option>
+        <option value="Easy">Easy</option>
+        <option value="Medium">Medium</option>
+        <option value="Hard">Hard</option>
+      </select>
+
+      <label>Flag:</label>
+      <input type="text" id="flag" required>
+
+      <label>Hint:</label>
+      <input type="text" id="hint">
+
+      <label>Tags (pisahkan dengan koma):</label>
+      <input type="text" id="tags">
+
+      <label>Kategori:</label>
+      <input type="text" id="category" required>
+
+      <label>Link File/Web:</label>
+      <input type="url" id="link" required>
+
+      <button type="submit">Kirim Soal</button>
+      <div class="footer">Soal akan ditinjau terlebih dahulu sebelum diterbitkan.</div>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('challengeForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const data = {
+        name: document.getElementById('name').value,
+        title: document.getElementById('title').value,
+        description: document.getElementById('description').value,
+        point: document.getElementById('point').value,
+        level: document.getElementById('level').value,
+        flag: document.getElementById('flag').value,
+        hint: document.getElementById('hint').value,
+        tags: document.getElementById('tags').value,
+        category: document.getElementById('category').value,
+        link: document.getElementById('link').value
+      };
+
+      fetch('https://upd.al3xzer0.cfd/submit-challenge', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      })
+        .then(res => res.json())
+        .then(res => {
+          alert('✅ Soal berhasil dikirim!');
+          document.getElementById('challengeForm').reset();
+        })
+        .catch(err => {
+          console.error(err);
+          alert('❌ Gagal mengirim.');
+        });
+    });
+  </script>
+</body>
+</html>
+

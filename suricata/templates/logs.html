@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Logs for {{ host }}</title>
+</head>
+<body>
+  <a href="/">← Back to Dashboard</a>
+  <h2>Logs for {{ host }}</h2>
+  <pre style="white-space: pre-wrap;">
+  {% for log in logs %}
+    {{ log }}
+  {% endfor %}
+  </pre>
+</body>
+</html>
+

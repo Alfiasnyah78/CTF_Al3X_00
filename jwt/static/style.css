@@ -1,0 +1,220 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #fff;
+  perspective: 1000px;
+}
+
+.card-container {
+  transform-style: preserve-3d;
+  transform: rotateY(10deg) rotateX(10deg);
+}
+
+.login-card, .info-card, .admin-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2em;
+  border-radius: 20px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+  backdrop-filter: blur(10px);
+  min-width: 300px;
+  transition: all 0.5s ease;
+  transform: rotateY(-5deg) rotateX(5deg);
+}
+
+.login-card:hover, .info-card:hover, .admin-card:hover {
+  transform: rotateY(0deg) rotateX(0deg) scale(1.03);
+}
+
+h2 {
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 0.5em 0;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+}
+
+button, .btn {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 1em;
+  background-color: #6c5ce7;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+button:hover, .btn:hover {
+  background-color: #a29bfe;
+}
+
+code {
+  background: #1e1e2f;
+  padding: 0.2em 0.5em;
+  border-radius: 5px;
+  color: #00ffe7;
+  font-weight: bold;
+}
+
+
+.bear-face {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background: #a37b5d;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+}
+
+.ear {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: #a37b5d;
+  border-radius: 50%;
+  top: -15px;
+}
+.ear.left {
+  left: -15px;
+}
+.ear.right {
+  right: -15px;
+}
+
+.eye {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #000;
+  border-radius: 50%;
+  top: 35px;
+}
+.eye.left {
+  left: 25px;
+}
+.eye.right {
+  right: 25px;
+}
+
+.eye.closed {
+  background: #000;
+  width: 12px;
+  height: 2px;
+  border-radius: 2px;
+  top: 40px;
+}
+
+.nose {
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 14px;
+  height: 10px;
+  background: #4e342e;
+  border-radius: 50% 50% 40% 40%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*dXNlcjpqd3R0b2tlbmJybwo=*/

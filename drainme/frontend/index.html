@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DrainMe CTF</title>
+  <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+</head>
+<body>
+  <h1>💧 DrainMe CTF 💧</h1>
+  <p>Contract Address: <span id="contractAddress">[loading]</span></p>
+
+  <button onclick="depositEth()">Deposit 1 ETH</button>
+  <button onclick="withdrawEth()">Withdraw</button>
+  <p>Contract Balance: <span id="contractBalance">...</span> wei</p>
+  <p id="flag" style="color: green; font-weight: bold;"></p>
+
+  <script>
+    const contractABI = [
+      "function deposit() public payable",
+      "function withdraw() public",
+      "function getBalance() public view returns (uint256)"
+    ];
+
+    const contractAddress = "0xYourContractAddressHere"; // Replace this after deploy
+
+    async function init() {
+      if (window.ethereum) {
+        await ethereum.request({ method: 'eth_requestAccounts' });
+        window.provider = new ethers.providers.Web3Provider(window.ethereum);
+        window.signer = provider.getSigner();
+        window.contract = new ethers.Contract(contractAddress, contractABI, signer);
+        document.getElementById("contractAddress").innerText = contractAddress;
+        updateBalance();
+      }
+    }
+
+    async function depositEth() {
+      const tx = await contract.deposit({ value: ethers.utils.parseEther("1.0") });
+      await tx.wait();
+      updateBalance();
+    }
+
+    async function withdrawEth() {
+      const tx = await contract.withdraw();
+      await tx.wait();
+      updateBalance();
+    }
+
+    async function updateBalance() {
+      const balance = await contract.getBalance();
+      document.getElementById("contractBalance").innerText = balance.toString();
+      if (balance.toString() === "0") {
+        document.getElementById("flag").innerText = "🎉 FLAG-CTF{drained_successfully}";
+      }
+    }
+
+    window.onload = init;
+  </script>
+</body>
+</html>

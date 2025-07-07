@@ -1,0 +1,16 @@
+🧪 Penyelesaian Soal
+Login sebagai user biasa (user:userpass)
+
+Salin JWT dari cookie
+
+Gunakan https://jwt.io:
+
+Ubah "role" → "admin"
+
+Ubah header "alg" → "none"
+
+Kosongkan signature
+
+Paste hasilnya ke cookie token
+
+Akses /admin → dapat flag 🎉

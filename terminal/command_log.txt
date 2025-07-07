@@ -1,0 +1,137 @@
+[2025-05-11 02:45:40.090927] nfscc: ls
+[2025-05-11 02:46:03.881131] nfscc: cat command_log.txt
+[2025-05-11 03:10:48.323744] onepiece >> ls
+[2025-05-11 03:10:49.756168] onepiece >> clear
+[2025-05-11 03:10:53.750010] onepiece >> pwd
+[2025-05-11 03:11:00.111209] onepiece >> clear
+[2025-05-11 03:11:05.892861] onepiece >> whomai
+[2025-05-11 03:11:08.837163] onepiece >> whoami
+[2025-05-11 03:11:12.658171] onepiece >> cls
+[2025-05-11 03:11:15.777734] onepiece >> clear
+[2025-05-11 03:11:22.035402] onepiece >> exit
+[2025-05-11 03:11:24.987332] onepiece >> ls
+[2025-05-11 03:17:16.741534] onepiece >> sad
+[2025-05-11 03:17:18.582030] onepiece >> ls
+[2025-05-11 03:17:21.382031] onepiece >> ls
+[2025-05-11 03:17:22.577305] onepiece >> ls
+[2025-05-11 03:17:24.029234] onepiece >> ls
+[2025-05-11 03:17:33.488160] onepiece >> ls
+[2025-05-11 03:17:45.314838] onepiece >> cat /etc/passwd
+[2025-05-11 03:20:25.351309] onepiece >> whoami
+[2025-05-11 03:20:30.703718] onepiece >> exit
+[2025-05-11 03:20:33.331781] onepiece >> whoami
+[2025-05-11 03:21:31.733015] onepiece >> whoami
+[2025-05-11 03:22:04.246991] onepiece >> useradd alex
+[2025-05-11 03:22:05.600006] onepiece >> useradd alex
+[2025-05-11 03:22:18.415200] onepiece >> useradd alex
+[2025-05-11 03:22:28.326887] onepiece >> useradd syifa
+[2025-05-11 03:22:29.864094] onepiece >> cat /etc/passwd
+[2025-05-11 03:22:32.967751] onepiece >> useradd ipong
+[2025-05-11 03:22:34.564359] onepiece >> cat /etc/passwd
+[2025-05-11 03:22:46.709201] onepiece >> cat /etc/passwd
+[2025-05-11 03:22:49.200875] onepiece >> useradd test
+[2025-05-11 03:22:51.920404] onepiece >> useradd alex
+[2025-05-11 03:22:51.999449] onepiece >> cat /etc/passwd
+[2025-05-11 03:22:52.151669] onepiece >> cat /etc/psswd
+[2025-05-11 03:22:58.934648] onepiece >> cat /etc/passwd
+[2025-05-11 03:23:08.430262] onepiece >> cat /etc/passwd
+[2025-05-11 03:23:10.896113] onepiece >> cat /etc/passwd
+[2025-05-11 03:23:26.626749] onepiece >> cat /etc/passwd
+[2025-05-11 03:23:32.119275] onepiece >> sudo useradd swan
+[2025-05-11 03:23:32.364786] onepiece >> cat /etc/passwd
+[2025-05-11 03:23:43.274571] onepiece >> useradd swan
+[2025-05-11 03:23:45.861304] onepiece >> sudo useradd mey
+[2025-05-11 03:23:56.254197] onepiece >> userdel test
+[2025-05-11 03:23:59.659155] onepiece >> useradd swan
+[2025-05-11 03:24:02.889536] onepiece >> cat /etc/passwd
+[2025-05-11 03:24:12.741145] onepiece >> cat /etc/passwd
+[2025-05-11 03:24:14.372704] onepiece >> useradd MrFahri
+[2025-05-11 03:24:17.898191] onepiece >> cat /etc/passwd
+[2025-05-11 03:24:30.299634] onepiece >> su alex
+[2025-05-11 03:24:32.010853] onepiece >> su syifa
+[2025-05-11 03:24:33.264212] onepiece >> sudo useradd mey
+[2025-05-11 03:24:38.003951] onepiece >> whoami
+[2025-05-11 03:24:41.144085] onepiece >> cat /etc/passwd
+[2025-05-11 03:24:42.899718] onepiece >> whoami
+[2025-05-11 03:24:50.171098] onepiece >> su ipong
+[2025-05-11 03:24:50.823977] onepiece >> useradd mey
+[2025-05-11 03:24:55.294149] onepiece >> whoami
+[2025-05-11 03:25:25.158157] onepiece >> uname
+[2025-05-11 03:25:27.566641] onepiece >> uname
+[2025-05-11 03:25:28.535596] onepiece >> uname
+[2025-05-11 03:25:34.579776] onepiece >> cat /etc/passwd mey
+[2025-05-11 03:25:54.594553] onepiece >> cat /etc/os-release
+[2025-05-11 03:26:14.002152] onepiece >> uname
+[2025-05-11 03:26:15.979624] onepiece >> cat /etc/os-release
+[2025-05-11 03:26:17.094007] onepiece >> cat /etc/os-release
+[2025-05-11 03:26:17.385403] onepiece >> cat /etc/os-release
+[2025-05-11 03:26:44.869612] onepiece >> cat /etc/os-release
+[2025-05-11 03:27:09.984235] onepiece >> useradd mey
+[2025-05-11 03:28:03.356086] onepiece >> touch index.js
+[2025-05-11 03:28:09.436537] onepiece >> pwd
+[2025-05-11 03:28:17.579635] onepiece >> pwd
+[2025-05-11 03:28:18.642151] onepiece >> cd index.js
+[2025-05-11 03:28:22.241995] onepiece >> pqd
+[2025-05-11 03:28:24.431023] onepiece >> pdwd
+[2025-05-11 03:28:26.494611] onepiece >> pwd
+[2025-05-11 03:28:27.431290] onepiece >> pwd
+[2025-05-11 03:28:28.332597] onepiece >> cd /tmp
+[2025-05-11 03:28:31.070688] onepiece >> pwd
+[2025-05-11 03:28:33.176316] onepiece >> cd /tmp
+[2025-05-11 03:28:34.186377] onepiece >> cd /tmp
+[2025-05-11 03:28:35.776210] onepiece >> cd /tmp
+[2025-05-11 03:28:38.987023] onepiece >> cd /tmp
+[2025-05-11 03:28:39.816565] onepiece >> pwd
+[2025-05-11 03:28:40.198370] onepiece >> pwd
+[2025-05-11 03:28:40.221167] onepiece >> pwd
+[2025-05-11 03:28:41.814345] onepiece >> pwd
+[2025-05-11 03:28:41.949338] onepiece >> cd /tmp
+[2025-05-11 03:28:44.471025] onepiece >> pwd
+[2025-05-11 03:28:54.908981] onepiece >> ls /
+[2025-05-11 03:29:01.052567] onepiece >> ls/
+[2025-05-11 03:29:02.258137] onepiece >> ls /
+[2025-05-11 03:29:04.819227] onepiece >> ls /
+[2025-05-11 03:29:06.988062] onepiece >> ls /
+[2025-05-11 03:29:13.542718] onepiece >> cd home
+[2025-05-11 03:29:16.695528] onepiece >> cd /home
+[2025-05-11 03:29:16.789165] onepiece >> cd /home
+[2025-05-11 03:29:20.029023] onepiece >> cd /home
+[2025-05-11 03:29:21.089497] onepiece >> cd /home
+[2025-05-11 03:29:27.734335] onepiece >> pwd
+[2025-05-11 03:29:29.326589] onepiece >> pwd
+[2025-05-11 03:29:34.082155] onepiece >> pwd
+[2025-05-11 03:29:37.929064] onepiece >> pwd
+[2025-05-11 03:30:23.792206] onepiece >> ls -1
+[2025-05-11 03:30:37.695000] onepiece >> cd Dockerfile
+[2025-05-11 03:30:38.913713] onepiece >> ls -l
+[2025-05-11 03:30:54.752657] onepiece >> ls
+[2025-05-11 03:30:56.927453] onepiece >> ls -l
+[2025-05-11 03:30:58.182285] onepiece >> pwd
+[2025-05-11 03:31:15.341607] onepiece >> ls
+[2025-05-11 03:31:31.987939] onepiece >> ls
+[2025-05-11 03:32:12.323575] onepiece >> ls
+[2025-05-11 03:32:19.985024] onepiece >> touch index.js
+[2025-05-11 03:32:22.965518] onepiece >> ls
+[2025-05-11 03:32:25.637488] onepiece >> touch index.js
+[2025-05-11 03:32:26.334897] onepiece >> touch index.js
+[2025-05-11 03:32:28.595826] onepiece >> touch index.js
+[2025-05-11 03:32:33.851060] onepiece >> ls
+[2025-05-11 03:32:43.895848] onepiece >> touch index.py
+[2025-05-11 03:32:46.127401] onepiece >> ls
+[2025-05-11 03:32:47.516493] onepiece >> touch index.go
+[2025-05-11 03:32:48.919813] onepiece >> ls
+[2025-05-11 03:32:59.709563] onepiece >> touch index.go
+[2025-05-11 03:33:04.795036] onepiece >> touch index.go
+[2025-05-11 03:33:06.218867] onepiece >> touch index.go
+[2025-05-11 03:33:06.921084] onepiece >> touch index.go
+[2025-05-11 03:33:07.055569] onepiece >> ls
+[2025-05-11 03:33:09.019039] onepiece >> ls
+[2025-05-11 03:33:11.156351] onepiece >> ls
+[2025-05-11 03:33:13.911977] onepiece >> ls
+[2025-05-11 03:33:38.463135] onepiece >> ls
+[2025-05-11 03:33:40.903884] onepiece >> nano index.go
+[2025-05-11 03:33:43.724453] onepiece >> nano index.go
+[2025-05-11 03:34:00.237188] onepiece >> touch index.go
+[2025-05-11 03:34:03.326310] onepiece >> nano index.go
+[2025-05-11 03:34:03.913614] onepiece >> ls
+[2025-05-11 03:34:13.863513] onepiece >> pwd

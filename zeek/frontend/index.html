@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>IDS Monitoring Dashboard</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+    h2 { margin-top: 40px; }
+    table { border-collapse: collapse; width: 100%; margin-bottom: 40px; }
+    th, td { border: 1px solid #ccc; padding: 8px; }
+    th { background: #eee; }
+    nav { margin-bottom: 20px; }
+    button { margin-right: 10px; padding: 8px 16px; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <h1>IDS Monitoring Dashboard</h1>
+  <nav>
+    <button onclick="showAlerts('suricata')">Suricata Alerts</button>
+    <button onclick="showAlerts('snort')">Snort Alerts</button>
+    <button onclick="showAlerts('all')">All Alerts</button>
+  </nav>
+
+  <div id="alerts-container"></div>
+
+  <script>
+    async function fetchAlerts(type) {
+      let url = '/api/alerts';
+      if (type === 'suricata') url = '/api/alerts/suricata';
+      else if (type === 'snort') url = '/api/alerts/snort';
+
+      const res = await fetch(url);
+      const data = await res.json();
+      return data;
+    }
+
+    function renderTable(alerts, title, columns) {
+      let html = `<h2>${title}</h2>`;
+      html += '<table><thead><tr>';
+      for (const col of columns) {
+        html += `<th>${col}</th>`;
+      }
+      html += '</tr></thead><tbody>';
+
+      if (alerts.length === 0) {
+        html += '<tr><td colspan="' + columns.length + '">No alerts</td></tr>';
+      } else {
+        for (const alert of alerts) {
+          html += '<tr>';
+          for (const col of columns) {
+            html += `<td>${alert[col] || ''}</td>`;
+          }
+          html += '</tr>';
+        }
+      }
+      html += '</tbody></table>';
+      return html;
+    }
+
+    async function showAlerts(type) {
+      const container = document.getElementById('alerts-container');
+      container.innerHTML = 'Loading...';
+      try {
+        const data = await fetchAlerts(type);
+        if(type === 'suricata') {
+          container.innerHTML = renderTable(data, 'Suricata Alerts', ['timestamp', 'src_ip', 'dest_ip', 'alert', 'severity']);
+        } else if(type === 'snort') {
+          container.innerHTML = renderTable(data, 'Snort Alerts', ['timestamp', 'src_ip', 'dest_ip', 'alert', 'priority']);
+        } else {
+          // All
+          let html = renderTable(data.suricata || [], 'Suricata Alerts', ['timestamp', 'src_ip', 'dest_ip', 'alert', 'severity']);
+          html += renderTable(data.snort || [], 'Snort Alerts', ['timestamp', 'src_ip', 'dest_ip', 'alert', 'priority']);
+          container.innerHTML = html;
+        }
+      } catch (e) {
+        container.innerHTML = 'Error loading alerts.';
+      }
+    }
+
+    // Initial load
+    showAlerts('all');
+
+    // Auto refresh every 15 sec
+    setInterval(() => showAlerts('all'), 15000);
+  </script>
+</body>
+</html>
+

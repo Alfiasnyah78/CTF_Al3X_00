@@ -1,0 +1,142 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #ffe4ec, #fbb6ce);
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+}
+
+.container {
+  max-width: 960px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5em;
+  color: #ff69b4;
+  margin-bottom: 20px;
+}
+
+.idol-card {
+  display: flex;
+  justify-content:center;
+  flex-direction: row;
+  align-items: center;
+  background: #ffeef4;
+  border-radius: 15px;
+  padding: 20px;
+  gap: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  margin-bottom: 30px;
+  margin: 30px 0;
+  flex-wrap: wrap;
+}
+
+.idol-card img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 15px;
+  border: 4px solid #fff0f5;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.ido-card img:hover {
+	transform: scale (1.05);
+}
+
+
+.idol-info h2 {
+  margin: 0;
+  color: #e75480;
+}
+
+.flag {
+  font-size: 1.5em;
+  color: #228B22;
+  background: #f0fff0;
+  border: 2px dashed #8fbc8f;
+  padding: 15px;
+  border-radius: 12px;
+  margin: 20px auto;
+  width: fit-content;
+}
+
+.hint-box {
+  background: #fffaf0;
+  padding: 15px;
+  border-radius: 10px;
+  border-left: 5px solid #ffb6c1;
+  margin: 20px 0;
+  text-align: left;
+}
+
+.hint-box code {
+  background: #f9f2f4;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+footer {
+  font-size: 12px;
+  color: #aaa;
+  margin-top: 40px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  justify-content:center;
+  margin-top: 30px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  justify-content:center;
+  border-radius: 10px;
+  border: 3px solid #ffeef4;
+  transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+.reveal-title {
+  color: #ff1493;
+  margin-top: 40px;
+  font-weight: bold;
+}
+
+.animate {
+  animation: popIn 0.7s ease-in-out;
+}
+
+@keyframes popIn {
+  0% { transform: scale(0.7); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.music-btn {
+  background: #ff69b4;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 15px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
+.music-btn:hover {
+  background: #ff1493;
+}
+

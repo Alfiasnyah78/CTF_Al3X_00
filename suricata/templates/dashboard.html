@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Suricata Dashboard</title>
+</head>
+<body>
+  <h2>Monitored Hosts</h2>
+  <ul>
+    {% for host in hosts %}
+      <li><a href="/logs/{{ host }}">{{ host }}</a></li>
+    {% endfor %}
+  </ul>
+
+  <h3>Upload Log</h3>
+  <form method="POST" action="/upload" enctype="multipart/form-data">
+    Hostname: <input name="host" required>
+    Log File (eve.json): <input type="file" name="log" required>
+    <button type="submit">Upload</button>
+  </form>
+</body>
+</html>
+

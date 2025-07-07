@@ -1,0 +1,45 @@
+2025-05-20 06:34:58,511 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2025-05-20 06:34:58,518 INFO supervisord started with pid 1
+2025-05-20 06:34:59,524 INFO spawned: 'fail2ban' with pid 7
+2025-05-20 06:34:59,532 INFO spawned: 'flask' with pid 8
+2025-05-20 06:34:59,836 INFO exited: fail2ban (exit status 255; not expected)
+2025-05-20 06:35:01,035 INFO spawned: 'fail2ban' with pid 12
+2025-05-20 06:35:01,037 INFO success: flask entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-05-20 06:35:01,357 INFO exited: fail2ban (exit status 255; not expected)
+2025-05-20 06:35:04,270 INFO spawned: 'fail2ban' with pid 15
+2025-05-20 06:35:04,577 INFO exited: fail2ban (exit status 255; not expected)
+2025-05-20 06:35:07,587 INFO spawned: 'fail2ban' with pid 17
+2025-05-20 06:35:07,866 INFO exited: fail2ban (exit status 255; not expected)
+2025-05-20 06:35:08,869 INFO gave up: fail2ban entered FATAL state, too many start retries too quickly
+2025-05-20 06:41:24,054 WARN received SIGTERM indicating exit request
+2025-05-20 06:41:24,054 INFO waiting for flask to die
+2025-05-20 06:41:24,150 INFO stopped: flask (exit status 0)
+2025-05-20 06:41:25,471 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2025-05-20 06:41:25,479 INFO supervisord started with pid 1
+2025-05-20 06:41:26,485 INFO spawned: 'fail2ban' with pid 8
+2025-05-20 06:41:26,492 INFO spawned: 'flask' with pid 9
+2025-05-20 06:41:26,765 INFO exited: fail2ban (exit status 255; not expected)
+2025-05-20 06:41:28,047 INFO spawned: 'fail2ban' with pid 13
+2025-05-20 06:41:28,048 INFO success: flask entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-05-20 06:41:28,340 INFO exited: fail2ban (exit status 255; not expected)
+2025-05-20 06:41:30,350 INFO spawned: 'fail2ban' with pid 16
+2025-05-20 06:41:30,714 INFO exited: fail2ban (exit status 255; not expected)
+2025-05-20 06:41:33,725 INFO spawned: 'fail2ban' with pid 18
+2025-05-20 06:41:34,112 INFO exited: fail2ban (exit status 255; not expected)
+2025-05-20 06:41:35,114 INFO gave up: fail2ban entered FATAL state, too many start retries too quickly
+2025-05-20 07:02:14,043 INFO reaped unknown pid 217 (exit status 0)
+2025-05-20 07:05:47,384 WARN received SIGTERM indicating exit request
+2025-05-20 07:05:47,385 INFO waiting for flask to die
+2025-05-20 07:05:47,533 INFO stopped: flask (exit status 0)
+2025-05-20 07:05:49,021 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2025-05-20 07:05:49,027 INFO supervisord started with pid 1
+2025-05-20 07:05:50,035 INFO spawned: 'fail2ban' with pid 7
+2025-05-20 07:05:50,045 INFO spawned: 'flask' with pid 8
+2025-05-20 07:05:51,573 INFO success: fail2ban entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-05-20 07:05:51,573 INFO success: flask entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-06-24 08:13:03,753 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2025-06-24 08:13:03,761 INFO supervisord started with pid 1
+2025-06-24 08:13:04,769 INFO spawned: 'fail2ban' with pid 7
+2025-06-24 08:13:04,789 INFO spawned: 'flask' with pid 8
+2025-06-24 08:13:06,616 INFO success: fail2ban entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-06-24 08:13:06,616 INFO success: flask entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)

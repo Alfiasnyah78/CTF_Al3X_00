@@ -1,0 +1,19 @@
+body {
+  font-family: monospace;
+  background-color: #1e1e1e;
+  color: #eee;
+  padding: 20px;
+}
+select {
+  padding: 5px;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+pre {
+  background: #2d2d2d;
+  padding: 15px;
+  border-radius: 5px;
+  max-height: 500px;
+  overflow-y: scroll;
+}
+

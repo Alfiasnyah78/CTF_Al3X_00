@@ -1,0 +1,74 @@
+from flask import Flask, request, render_template_string
+from flask_httpauth import HTTPBasicAuth
+from werkzeug.security import check_password_hash, generate_password_hash
+import subprocess
+import datetime
+
+app = Flask(__name__)
+auth = HTTPBasicAuth()
+
+users = {
+    "nfscc": generate_password_hash("Nfscc28")  # Ganti password!
+}
+
+BLOCKED_COMMANDS = ["rm", "shutdown", "reboot", "halt", "mkfs", ":(){ :|:& };:"]
+
+@auth.verify_password
+def verify_password(username, password):
+    if username in users and check_password_hash(users.get(username), password):
+        return username
+
+HTML_TEMPLATE = """
+<!doctype html>
+<html>
+<head>
+    <title>Secure Web Terminal</title>
+    <style>
+        body { background: #1e1e1e; color: #00ff00; font-family: monospace; padding: 20px; }
+        input[type="text"] { width: 80%%; background: #111; color: #0f0; border: 1px solid #444; }
+        input[type="submit"] { background: #333; color: #0f0; border: 1px solid #444; }
+        pre { background: #111; padding: 10px; border: 1px solid #333; }
+    </style>
+</head>
+<body>
+<h2>Web Terminal</h2>
+<form method="POST" action="/cmd">
+    <label>$ </label>
+    <input name="command" autofocus>
+    <input type="submit" value="Run">
+</form>
+<pre>{{ output }}</pre>
+</body>
+</html>
+"""
+
+def is_blocked(cmd):
+    return any(bad in cmd for bad in BLOCKED_COMMANDS)
+
+def log_command(user, command):
+    with open("command_log.txt", "a") as f:
+        f.write(f"[{datetime.datetime.now()}] {user}: {command}\n")
+
+@app.route('/', methods=["GET"])
+@auth.login_required
+def index():
+    return render_template_string(HTML_TEMPLATE, output="")
+
+@app.route('/cmd', methods=["POST"])
+@auth.login_required
+def cmd():
+    command = request.form.get('command', '')
+    log_command(auth.current_user(), command)
+
+    if is_blocked(command):
+        return render_template_string(HTML_TEMPLATE, output="Command is blocked for safety.")
+
+    try:
+        output = subprocess.check_output(command, shell=True, stderr=subprocess.STDOUT, text=True)
+    except subprocess.CalledProcessError as e:
+        output = e.output
+    return render_template_string(HTML_TEMPLATE, output=output)
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=638, debug=True)
+

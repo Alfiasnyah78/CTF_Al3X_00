@@ -1,0 +1,1 @@
+<script>   fetch("/flag")     .then(r => r.text())     .then(f => alert("Flag: " + f)); </script>

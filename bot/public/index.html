@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lapor Bug</title>
+  <style>
+    body {
+      background: #000;
+      color: #33ff33;
+      font-family: monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .terminal {
+      border: 2px solid #33ff33;
+      padding: 2rem;
+      width: 400px;
+      box-shadow: 0 0 15px #33ff33;
+    }
+    input, textarea {
+      width: 100%;
+      background: #111;
+      color: #33ff33;
+      border: 1px solid #33ff33;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      padding: 5px;
+    }
+    button {
+      width: 100%;
+      background: #111;
+      color: #33ff33;
+      border: 2px solid #33ff33;
+      padding: 10px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #33ff33;
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+  <div class="terminal">
+    <h2>🐞 Laporan Bug</h2>
+    <form id="bugForm">
+      <label>Nama:</label>
+      <input type="text" id="name" required>
+      <label>Deskripsi Bug:</label>
+      <textarea id="bug" rows="5" required></textarea>
+      <button type="submit">Kirim</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('bugForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const bug = document.getElementById('bug').value;
+
+      fetch('http://localhost:3000/report-bug', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ name, bug })
+      })
+      .then(res => res.json())
+      .then(data => {
+        alert('Laporan terkirim!');
+        document.getElementById('bugForm').reset();
+      })
+      .catch(err => {
+        console.error(err);
+        alert('Gagal mengirim.');
+      });
+    });
+  </script>
+</body>
+</html>
+

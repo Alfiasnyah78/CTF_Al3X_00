@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Terminal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background-color: black;
+            color: #00ff99;
+            font-family: 'Share Tech Mono', monospace;
+            overflow: hidden;
+        }
+
+        canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+
+        .terminal {
+            position: relative;
+            z-index: 1;
+            padding: 3rem;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            animation: glitch 1s infinite alternate;
+            text-shadow: 0 0 5px #00ff99;
+        }
+
+        form {
+            margin-top: 2rem;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            background: black;
+            border: 1px solid #00ff99;
+            color: #00ff99;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        input[type="submit"] {
+            background: black;
+            color: #00ff99;
+            border: 1px solid #00ff99;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #00ff99;
+            color: black;
+        }
+
+        .hint {
+            margin-top: 1rem;
+            color: #00ffaa;
+            font-size: 0.9rem;
+        }
+
+        @keyframes glitch {
+            0% { text-shadow: 2px 2px #ff00c8, -2px -2px #00ffff; }
+            50% { text-shadow: -1px -1px #ff00c8, 1px 1px #00ffff; }
+            100% { text-shadow: 2px -2px #ff00c8, -2px 2px #00ffff; }
+        }
+    </style>
+</head>
+<body>
+<canvas id="matrix"></canvas>
+
+<div class="terminal">
+    <h1>>> Darkweb <<</h1>
+    <form action="/greet" method="post" onsubmit="return showHackerAlert()">
+        <label for="name">Input:~$</label>
+        <input type="text" id="name" name="name" placeholder="Masukan Identitas Key" onkeydown="playBlip()">
+        <input type="submit" value="Kirim">
+    </form>
+    <div class="hint">Wleeeee</div>
+</div>
+
+<audio id="blip" src="https://assets.mixkit.co/sfx/preview/mixkit-retro-game-notification-212.mp3" preload="auto"></audio>
+
+<script>
+    // Matrix effect
+    const canvas = document.getElementById('matrix');
+    const ctx = canvas.getContext('2d');
+
+    canvas.height = window.innerHeight;
+    canvas.width = window.innerWidth;
+
+    const chars = "アカサタナハマヤラワ0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const fontSize = 14;
+    const columns = canvas.width / fontSize;
+    const drops = Array(Math.floor(columns)).fill(1);
+
+    function draw() {
+        ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        ctx.fillStyle = "#0F0";
+        ctx.font = fontSize + "px monospace";
+
+        for (let i = 0; i < drops.length; i++) {
+            const text = chars.charAt(Math.floor(Math.random() * chars.length));
+            ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+            if (drops[i] * fontSize > canvas.height || Math.random() > 0.95)
+                drops[i] = 0;
+
+            drops[i]++;
+        }
+    }
+
+    setInterval(draw, 35);
+
+    // Blip sound saat ngetik
+    function playBlip() {
+        const blip = document.getElementById("blip");
+        blip.currentTime = 0;
+        blip.play();
+    }
+
+    // Alert hacker mode
+    function showHackerAlert() {
+        alert("🧠 Input diterima...\n⚡ Menjalankan sandbox...");
+        return true;
+    }
+</script>
+</body>
+</html>
+

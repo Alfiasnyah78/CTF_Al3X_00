@@ -1,0 +1,3 @@
+Jun 19 06:45:54.828 [warn] You are running Tor as root. You don't need to, and you probably shouldn't.
+16:92AAC076E8183B1E60315BB2E78FF3BCDE9777B7FAE843E2B7FFD94CA1
+qbun:qtcyd123

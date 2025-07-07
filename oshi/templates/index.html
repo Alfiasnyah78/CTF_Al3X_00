@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>💗 My Oshi - Freya JKT48 💗</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>💗 My Crush 💗</h1>
+
+    <audio id="bgm" autoplay loop>
+      <source src="/static/lagu-lagu-jkt48_jkt48-heavy-rotation.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+
+    <button onclick="toggleMusic()" class="music-btn">🎵 Toggle Music</button>
+
+    <div class="idol-card">
+      <img src="https://cdn1-production-images-kly.akamaized.net/flK54qu05WnBoI4CG5BciTjGLDA=/1200x900/smart/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/4625469/original/064247900_1698333191-freya_body_lipt6.jpg" alt="Freya JKT48" />
+      <img src="https://i.pinimg.com/736x/43/12/c4/4312c418859680767029b731562f807f.jpg" alt="Freya JKT48" />
+      <img src="https://i.pinimg.com/736x/47/64/ee/4764ee1051d294cbfcb1603838530c12.jpg" alt="Freya"/>
+      <img src="https://i.pinimg.com/736x/ac/f0/3c/acf03cb0ab065ffcb0ff260d84a53372.jpg" alt="fre"/>
+      <div class="idol-info">
+        <h2>Freya JKT48</h2>
+        <p>Semanis karamel yang akan membuat kamu tidak akan pernah lupa dengan rasanya.Gadis koleris yang suka berimajinasi, terangi harimu dengan senyum karamelku Hallo Namaku Freyaa</p>
+      </div>
+    </div>
+    {% if flag %}
+      <div class="flag animate">🎉 FLAG: {{ flag }} 🎉</div>
+
+      <h2 class="reveal-title">✨ My Oshi ✨</h2>
+      <div class="gallery">
+          <img src="https://i.pinimg.com/736x/ef/88/85/ef888560e936a175d436be2906a62027.jpg" alt="Freya" />
+      </div>
+    {% else %}
+      <div class="hint-box">
+        <p><strong>Hint:</strong><code></code>format <code>YYYY-MM-DD</code>.</p>
+        <p class="note"></p>
+      </div>
+    {% endif %}
+
+    <footer>Made in Mr.Al3X</footer>
+  </div>
+
+  <script>
+    const bgm = document.getElementById("bgm");
+    function toggleMusic() {
+      if (bgm.paused) bgm.play();
+      else bgm.pause();
+    }
+  </script>
+</body>
+</html>
+

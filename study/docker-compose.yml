@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+  study-scheduler:
+    build: .
+    ports:
+      - "8567:8567"
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+    restart: unless-stopped
+

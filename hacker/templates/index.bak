@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Hacker Fake</title>
+  <style>
+    body {
+      background-color: black;
+      color: #00ff00;
+      font-family: 'Courier New', monospace;
+      margin: 0;
+      padding: 20px;
+      cursor: crosshair;
+      overflow: hidden;
+    }
+
+    #terminal-output {
+      white-space: pre-line;
+      font-size: 1.2em;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    #secret {
+      display: none;
+    }
+    .video-container {
+      margin: 20px 0;
+      max-width: 40%;
+      box-shadow: 0 0 25px #00ffcc;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    video {
+      width: 40%;
+      height: auto;
+      display: block;
+    }
+    .d-none {
+	    display:none;
+    
+  </style>
+</head>
+<body>
+<div class="video-container">
+   <video controls autoplay loop>
+      <source src="/static/hacker.mp4" type="video/mp4">
+      Ini Video!!!!!!
+   </video> 
+  </div>
+  <div id="terminal-output">> Welcome, agent. Click anywhere to proceed...</div>
+  <div id="secret">
+    <form method="POST" action="/hack" class="d-none">
+      <input type="text" name="username" placeholder="Username"><br>
+      <input type="password" name="password" placeholder="Password"><br>
+      <button type="submit">Login</button>
+    </form>
+  </div>
+
+  <audio id="click-sound" src="/static/audio/click.mp3" preload="auto"></audio>
+
+  <script>
+    const phrases = [
+      "> Access granted",
+      "> Bypass firewall",
+      "> Connecting to secure shell...",
+      "> Downloading flag...",
+      "> Injecting payload...",
+      "> Tracing backdoor...",
+      "> Uplink established"
+    ];
+
+    const output = document.getElementById('terminal-output');
+    const clickSound = document.getElementById('click-sound');
+    const secret = document.getElementById('secret');
+
+    document.addEventListener('click', () => {
+      clickSound.currentTime = 0;
+      clickSound.play();
+
+      const line = phrases[Math.floor(Math.random() * phrases.length)];
+      const newLine = document.createElement("div");
+      newLine.textContent = line;
+      newLine.style.animation = "fadeIn 0.5s";
+      output.appendChild(newLine);
+
+      // Biar muncul form login setelah 5 klik
+      if (output.children.length > 5) {
+        secret.style.display = 'block';
+      }
+    });
+  </script>
+</body>
+</html>
+

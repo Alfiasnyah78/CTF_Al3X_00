@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OnePiece Shop</title>
+    <style>
+        body {
+            font-family: monospace;
+            background-color: #0b0b0b;
+            color: #00ffcc;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #00ffcc;
+            color: #000;
+            padding: 20px 0;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .container {
+            padding: 40px 20px;
+        }
+
+        .product {
+            background: #000;
+            border: 2px dashed #00ffcc;
+            display: inline-block;
+            margin: 20px;
+            padding: 20px;
+            width: 250px;
+            border-radius: 10px;
+        }
+
+        .product img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border: 2px solid #00ffcc;
+            border-radius: 5px;
+        }
+
+        .product h3 {
+            color: #00ffcc;
+            margin-top: 10px;
+        }
+
+        a.button {
+            margin-top: 10px;
+            display: inline-block;
+            color: #000;
+            background: #00ffcc;
+            padding: 8px 12px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .hint {
+            margin-top: 30px;
+            font-style: italic;
+            color: #cccccc;
+        }
+	  .profile-logo {
+            cursor: pointer;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-top: 20px;
+        }
+
+        .profile-logo:hover {
+            border: 2px solid #00ffcc;
+        }
+	        .navbar {
+            background-color: #222;
+            padding: 10px;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar a {
+            color: #fff;
+            padding: 15px;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+
+        .navbar a:hover {
+            background-color: #00ffcc;
+        }
+
+    </style>
+</head>
+<body>
+    <header>🏴‍☠️ OnePiece Shop 🏴‍☠️</header>
+            <!-- Navbar -->
+    <div class="navbar">
+        <a href="/logout">Home</a>
+        <a href="/logout">Shop</a>
+        <a href="/logout">About</a>
+        <a href="/logout">Contact</a>
+        <!-- Logo Profil di Navbar -->
+        <a href="/profile/1">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/3/35/One_Piece_Logo.svg" alt="OnePiece Profile" class="profile-logo">
+        </a>
+    </div>
+    <div class="container">
+        <div class="product">
+            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExam84OWUyNDFmYWlsZWQ1dHRkZnkya2lvb3RmZ2toeXBzMTA0NnMwdCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/KGd6ns7MR1gPCRT52z/giphy.gif" alt="Topi Jerami">
+            <h3>Topi Jerami</h3>
+            <a href="/order/1" class="button">Lihat Pesanan</a>
+        </div>
+
+        <div class="product">
+            <img src="https://media.giphy.com/media/FunPkpXCRLZ72/giphy.gif?cid=ecf05e471trkx8uyeusyvugciz3db44h673yet6ddyyi2zog&ep=v1_gifs_search&rid=giphy.gif&ct=g" alt="Pedang Zoro">
+            <h3>Wado Ichimonji</h3>
+            <a href="/order/2" class="button">Lihat Pesanan</a>
+        </div>
+
+        <div class="product">
+            <img src="https://media.giphy.com/media/OARh7n3a3g5y/giphy.gif?cid=ecf05e47oo9grqs4b4ht4qzf3wakf8o2sz36qnwc7pdzv9zv&ep=v1_gifs_search&rid=giphy.gif&ct=g" alt="Sepatu Hitam">
+            <h3>Sepatu Hitam Sanji</h3>
+            <a href="/order/3" class="button">Lihat Pesanan</a>
+        </div>
+
+	<div class="product">
+            <img src="https://media.giphy.com/media/xgmUI4bhAUE12/giphy.gif?cid=ecf05e47ek1ts9kahnh6oc92nxixi7czkfche89fu4td5yjx&ep=v1_gifs_search&rid=giphy.gif&ct=g" alt="Sepatu Hitam">
+            <h3>Tongkat Nami</h3>
+            <a href="/order/4" class="button">Lihat Pesanan</a>
+        </div>
+  	
+	<div class="product">
+            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaXZ3d3BjZjZra2cwaGZqaDA4YTJqMnJwN2lreHFwdmp2ZDFsa251OSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/jG186kNLKs6TS/giphy.gif" alt="Sepatu Hitam">
+            <h3>Monster Chopper</h3>
+            <a href="/order/5" class="button">Lihat Pesanan</a>
+        </div>
+
+	<div class="product">
+            <img src="https://media.giphy.com/media/RZhq91RCd9IoyiDGw3/giphy.gif?cid=ecf05e473vf5v7k65k05yzi6y3ycd03iqqah4g1hfnd79xtu&ep=v1_gifs_search&rid=giphy.gif&ct=g" alt="Sepatu Hitam">
+            <h3>Jinbe</h3>
+            <a href="/order/7" class="button">Lihat Pesanan</a>
+        </div>
+
+	<div class="product">
+            <img src="https://media.giphy.com/media/13SYnseWRwRSc8/giphy.gif?cid=ecf05e47xz8rgkhdf9x4lrpvpfnyvqrm6o3pstajtlidaxth&ep=v1_gifs_search&rid=giphy.gif&ct=g" alt="Sepatu Hitam">
+            <h3>Robin</h3>
+            <a href="/order/9" class="button">Lihat Pesanan</a>
+        </div>
+
+	<div class="product">
+            <img src="https://media.giphy.com/media/nAJCxDpCoQJjo4gt3Q/giphy.gif?cid=ecf05e47oaqlemga6l0axsfsr4liyldekbo10hkyu19fpcah&ep=v1_gifs_search&rid=giphy.gif&ct=g" alt="Sepatu Hitam">
+            <h3>Brook</h3>
+            <a href="/order/10" class="button">Lihat Pesanan</a>
+        </div>
+
+	<div class="product">
+            <img src="https://media.giphy.com/media/Jvzxn0c33thWUg7wqO/giphy.gif?cid=ecf05e477rdjx2mzn78n7rr28i549w71muv88dmeowzw526o&ep=v1_gifs_search&rid=giphy.gif&ct=g" alt="Sepatu Hitam">
+            <h3>Usopp</h3>
+            <a href="/order/11" class="button">Lihat Pesanan</a>
+        </div>
+
+	<div class="product">
+            <img src="https://media.giphy.com/media/bFuNiinhO51PobKCFw/giphy.gif?cid=ecf05e47olq569j1i2yshzenemritfkwdssz3vgoybe6nr9e&ep=v1_gifs_search&rid=giphy.gif&ct=g" alt="Sepatu Hitam">
+            <h3>Franky</h3>
+            <a href="/order/12" class="button">Lihat Pesanan</a>
+        </div>
+
+
+
+        <p class="hint">💡 Hint: dih ngintip</p>
+    </div>
+</body>
+</html>
+

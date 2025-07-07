@@ -1,0 +1,8 @@
+version: '3.9'
+services:
+  blockchain:
+    build: .
+    ports:
+      - "8545:8545"
+    volumes:
+      - .:/app

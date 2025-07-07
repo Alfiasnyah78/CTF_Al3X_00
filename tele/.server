@@ -1,0 +1,88 @@
+require('dotenv').config();
+const express = require('express');
+const bodyParser = require('body-parser');
+const fetch = require('node-fetch');
+const path = require('path');
+
+const app = express();
+const PORT = process.env.PORT || 4509;
+
+app.use(bodyParser.json());
+
+app.post('/submit-challenge', async (req, res) => {
+  const {
+    name, title, description, point, level,
+    flag, hint, tags, category, link
+  } = req.body;
+
+  // Validasi dasar
+  if (
+    !name || !title || !description || !point || !level ||
+    !flag || !category || !link
+  ) {
+    return res.status(400).json({ success: false, error: 'Semua field wajib diisi.' });
+  }
+
+  // Validasi lebih dalam
+  if (typeof point !== 'number' || point < 1 || point > 1000) {
+    return res.status(400).json({ success: false, error: 'Point harus antara 1-1000.' });
+  }
+
+  if (!/^https?:\/\/\S+$/i.test(link)) {
+    return res.status(400).json({ success: false, error: 'Link tidak valid.' });
+  }
+
+  if (!['Easy', 'Medium', 'Hard'].includes(level)) {
+    return res.status(400).json({ success: false, error: 'Level harus Easy, Medium, atau Hard.' });
+  }
+
+  // Format pesan
+  const message = `
+📥 *Kontribusi Soal CTF*
+👤 *Nama:* ${name}
+🏷️ *Judul:* ${title}
+📂 *Kategori:* ${category}
+⭐ *Point:* ${point}
+🎯 *Level:* ${level}
+
+📝 *Deskripsi:*
+${description}
+
+🧠 *Hint:* ${hint || '-'}
+🏷️ *Tags:* ${tags || '-'}
+🚩 *Flag:* \`${flag}\`
+🔗 *Link:* ${link}
+  `;
+
+console.log("payload");
+console.log({
+	chat_id: process.env.CHAT_ID,
+	text: message,
+});
+  try {
+    await fetch(`https://api.telegram.org/bot${process.env.BOT_TOKEN}/sendMessage`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        chat_id: process.env.CHAT_ID,
+        text: message,
+        
+      })
+    });
+
+    res.json({ success: true });
+  } catch (err) {
+    console.error('Telegram Error:', err);
+    res.status(500).json({ success: false, error: 'Gagal mengirim ke Telegram.' });
+  }
+});
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
+
+app.listen(PORT, () => {
+  console.log(`Server listening on port ${PORT}`);
+});
+

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Suricata Dashboard</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <h1>Suricata Log Viewer</h1>
+  <form method="get">
+    <label>Filter by type:</label>
+    <select name="type" onchange="this.form.submit()">
+      <option value="">All</option>
+      <option value="alert" {% if filter_type == 'alert' %}selected{% endif %}>Alert</option>
+      <option value="dns" {% if filter_type == 'dns' %}selected{% endif %}>DNS</option>
+      <option value="http" {% if filter_type == 'http' %}selected{% endif %}>HTTP</option>
+    </select>
+  </form>
+
+  <pre>
+    {% for log in logs %}
+{{ log }}
+    {% endfor %}
+  </pre>
+</body>
+</html>
+

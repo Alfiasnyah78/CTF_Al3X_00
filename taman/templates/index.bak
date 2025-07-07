@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Imut</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: linear-gradient(#d0f0c0, #fdf6e3);
+      text-align: center;
+      color: #444;
+    }
+
+    header {
+      background-color: #a2d5f2;
+      padding: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+      font-size: 2.5em;
+      color: #333;
+    }
+
+    .gallery {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      padding: 30px;
+    }
+
+    img {
+      border-radius: 15px;
+      box-shadow: 0 0 10px #aaa;
+      width: 300px;
+    }
+
+    button {
+      padding: 10px 20px;
+      border: none;
+      background-color: #ffa6c9;
+      color: white;
+      font-size: 1.1em;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #ff6f91;
+    }
+        .container {
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            padding: 20px;
+
+        }
+
+        .animal {
+
+            width: 150px;
+
+            margin: 20px;
+
+            position: relative;
+
+            animation: float 3s ease-in-out infinite;
+
+        }
+
+        @keyframes float {
+
+            0%, 100% {
+
+                transform: translateY(0);
+
+            }
+
+            50% {
+
+                transform: translateY(-10px);
+
+            }
+
+        }
+
+    footer {
+      padding: 15px;
+      font-size: 0.9em;
+      color: #666;
+    }
+     .hacker-form {
+    display: none; 
+    background: #0d0d0d;
+    border: 2px solid #00ff99;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    margin: 30px auto;
+    box-shadow: 0 0 15px #00ff99;
+    font-family: 'Courier New', monospace;
+  }
+
+  .hacker-form input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    background: #1a1a1a;
+    color: #00ff99;
+    border: 1px solid #00ff99;
+    border-radius: 5px;
+    outline: none;
+  }
+
+  .hacker-form input::placeholder {
+    color: #00ff99;
+    opacity: 0.7;
+  }
+
+  .hacker-form button {
+    width: 100%;
+    padding: 10px;
+    background: #000;
+    color: #00ff99;
+    font-weight: bold;
+    border: 2px solid #00ff99;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  #secret {
+	  display: none;
+   }
+
+  .hacker-form button:hover {
+    background: #00ff99;
+    color: #000;
+    box-shadow: 0 0 10px #00ff99;
+  }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🌸 Lucu Batt 🌼</h1>
+    <p>Yuk lihat kucing dan angsa yang gemoy!</p>
+  </header>
+
+  <div class="gallery">
+    <img src="{{ url_for('static', filename='images/cat.jpeg') }}" alt="Kucing Gemoy">
+    <img src="{{ url_for('static', filename='images/swan.jpg') }}" alt="Angsa Elegan">
+    <button class="hacker-button" onclick="meong()">Klik aku!</button>
+  </div>
+  <div class="container">
+
+        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExamZxOXYycXIzejFmM3I0ZTk5OWRiazh4bHcxNnQ3MW95MTczczFpNCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/VbnUQpnihPSIgIXuZv/giphy.gif" alt="Kucing" class="animal" id="cat">
+
+	<div src="#" alt="Kucing" class="animal" id="cat2"></div>
+
+        <img src="https://media.giphy.com/media/7HRrwT8IF7QQk47Vty/giphy.gif?cid=ecf05e4787n5s6zp389vj4fzlhnvxs1hjirhtdt3hjyrkaip&ep=v1_gifs_search&rid=giphy.gif&ct=g" alt="Kucing" class="animal" id="cat3">
+
+	<div alt="Angsa" class="animal" id="goose"></div>
+
+        <!--img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Goose_in_the_park.jpg/640px-Goose_in_the_park.jpg" alt="Angsa" class="animal" id="goose2">
+
+	<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Goose_in_the_park.jpg/640px-Goose_in_the_park.jpg" alt="Angsa" class="animal" id="goose3"--> 
+
+        <button class="button" onclick="addAnimal()">Tambah Kucing atau Angsa</button>
+
+    </div>
+  <div id="terminal"></div>
+  <footer>
+    untuk Kamu 🌷
+  </footer>
+  <audio id="meong-sound" src="https://www.fesliyanstudios.com/play-mp3/387" preload="auto"></audio>
+  <div id="secret">
+    <form action="/login" method="POST" style="display: none;" id="login" class="hacker-form">
+     <input type="text" name="username" placeholder="username">
+     <input type="password" name="password" placeholder="password">
+     <button type="submit">Login</button>
+   </form>
+  </div>
+   <script>
+    function meong() {
+      const suara = document.getElementById("meong-sound");
+      suara.play();
+
+      const output = document.getElementById("terminal");
+      const teks = [
+        "> Kamu cantik...",
+        "> Kamu Lucu...",
+        "> Kamu Imut~ 🐾",
+        "> Segalanya bagi mu..."
+      ];
+
+      output.innerHTML = "";
+      let i = 0;
+
+      const interval = setInterval(() => {
+        if (i < teks.length) {
+          output.innerHTML += teks[i] + "<br>";
+          i++;
+        } else {
+          clearInterval(interval);
+          document.getElementById("login").style.display = "block";
+        }
+      }, 600);
+
+      const style = "color: hotpink; font-size: 16px; font-weight: bold; font-family: 'Courier New'";
+      console.log("%cSelamat datang di taman lucu ini! 🐾", style);
+
+      const loadingMessages = [
+        "🌼 Menanam bunga...",
+        "🐱 Membangunkan kucing...",
+        "🦢 Memandikan angsa...",
+        "🎠 Menyiapkan wahana lucu...",
+        "💖 Mengatur warna pelangi..."
+      ];
+
+      let j = 0;
+      const loadingInterval = setInterval(() => {
+        if (j < loadingMessages.length) {
+          console.log("%c" + loadingMessages[j], style);
+          j++;
+        } else {
+          clearInterval(loadingInterval);
+          console.log("%c🌈 Taman siap dikunjungi! Selamat bersenang-senang! 🎉", style);
+        }
+      }, 1200);
+    }
+	   function addAnimal() {
+
+            const container = document.querySelector('.container');
+
+            const randomAnimal = Math.random() < 0.5 ? 'cat' : 'goose';
+
+            const img = document.createElement('img');
+
+            img.className = 'animal';
+
+            img.src = randomAnimal === 'cat' ? 'https://media.giphy.com/media/gbmWwWm4sGMQvAYm1G/giphy.gif?cid=ecf05e4783gio5opf77f8reuymt2thov4797z8kmzmydu484&ep=v1_gifs_search&rid=giphy.gif&ct=g' : 'https://media.giphy.com/media/RYat3AOryJXZV2HJjU/giphy.gif?cid=ecf05e47zvv1ktw1ueixl5qbh2jcfp027xie1fkofvh7yw4u&ep=v1_gifs_search&rid=giphy.gif&ct=g';
+
+            container.appendChild(img);
+
+        }
+  </script>
+</body>
+</html>
+

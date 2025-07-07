@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>WWW Line Mode Clone</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/linemode.css') }}">
+</head>
+<body>
+<h1>&lt;&lt;&lt; COMMANDS AVAILABLE ON THE WORLD WIDE WEB LINE BROWSER Version 0.13 &gt;&gt;&gt;</h1>
+
+<p>You are reading document:<br>[Full URL here]</p>
+
+<p>&lt;RETURN&gt;&nbsp;&nbsp;&nbsp;&nbsp;Produces the next page of the remaining text.</p>
+<p>TOP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns to the first page of the present document.</p>
+<p>LIST&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Produces a list of hypertext references<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;which have been accumulated from the text<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;already shown on the screen.</p>
+
+<p>&lt;number&gt;&nbsp;&nbsp;&nbsp;&nbsp;Select a referenced document by number<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(from 1 to [n])</p>
+
+<p>K &lt;keywords&gt;&nbsp;&nbsp;&nbsp;&nbsp;Search this index for given keywords<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Keywords are separated by spaces.</p>
+
+<p>RECALL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gives a list of the previous nodes visited.</p>
+
+<p>Back, &lt;RETURN&gt; for more, Quit, or Help: </p>
+
+<form id="command-form" method="POST">
+  <input type="text" id="cmd-input" name="cmd" autofocus autocomplete="off" placeholder="Enter Command">
+</form>
+
+<pre id="terminal"></pre>
+
+<script src="{{ url_for('static', filename='js/blocker.js') }}"></script>
+<script src="{{ url_for('static', filename='js/keyboardSounds.js') }}"></script>
+<script src="{{ url_for('static', filename='js/commandline.js') }}"></script>
+<script src="{{ url_for('static', filename='js/piwik.js') }}"></script>
+
+<script>
+const form = document.getElementById('command-form');
+const terminal = document.getElementById('terminal');
+
+form.onsubmit = async (e) => {
+  e.preventDefault();
+  const input = document.getElementById('cmd-input');
+  const cmd = input.value;
+  terminal.innerHTML += `\n> ${cmd}`;
+  input.value = '';
+
+  const res = await fetch('/run', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+    body: `cmd=${encodeURIComponent(cmd)}`
+  });
+  const text = await res.text();
+  terminal.innerHTML += `\n${text}`;
+  window.scrollTo(0, document.body.scrollHeight);
+};
+</script>
+</body>
+</html>
+
