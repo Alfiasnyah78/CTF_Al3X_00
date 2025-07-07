@@ -5,7 +5,7 @@ import requests
 
 app = Flask(__name__)
 
-FLAG = "alx{C00k13ss_Vuln23Ni_i931j}"  # Ini flag-nya
+FLAG = "alx{flag}"  # Ini flag-nya
 
 @app.route('/')
 def index():
