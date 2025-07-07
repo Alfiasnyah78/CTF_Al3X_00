@@ -6,7 +6,7 @@ from flask import send_from_directory
 app = Flask(__name__)
 limiter = Limiter(get_remote_address, app=app, default_limits=["5 per minute"])
 
-FLAG = "alx{Capctha4_Ujasd34_jw4r}"
+FLAG = "alx{flag}"
 
 @app.route("/", methods=["GET", "POST"])
 def index():
