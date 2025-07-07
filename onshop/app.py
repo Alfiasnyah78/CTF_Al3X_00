@@ -52,7 +52,7 @@ def profile(uid):
         2: {"name": "Zoro", "email": "lato-lato@onepiece.com"},
         3: {"name": "Nami", "email": "namikazo@onepiece.com"},
         4: {"name": "sanji", "email": "sanji123@onepiece.com"},
-        5: {"name": "Nico Robin", "email": "robin@onepiece.com", "flag": "alx{ID0R42h_hHuiriken41_basf62}"}
+        5: {"name": "Nico Robin", "email": "robin@onepiece.com", "flag": "alx{flag}"}
     }
 
     profile = profiles.get(uid)
