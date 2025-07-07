@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route("/", methods=["GET"])
 def home():
-    flag = "alx{H3aed_5Sh0Tt_R3quest_812h7}"
+    flag = "alx{flag}"
     headers = request.headers
 
     lang = headers.get("Accept-Language", "")
