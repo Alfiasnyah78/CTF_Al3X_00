@@ -31,7 +31,7 @@ def caesar(text, shift):
 
 def main():
     correct = 0
-    flag = "alx{c0ngr4ts_5x_enc0ding_Crypt0graphy4}"
+    flag = "alx{flag}"
 
     print("Selamat datang di tantangan encoding!\nJawab 5 soal berturut-turut dengan benar untuk mendapatkan flag!\n")
 
